@@ -8,7 +8,7 @@ library("methods")
 xml.URL <- 'https://www.usda.gov/oce/commodity/wasde/latest.xml'
 xmlfile <- getURL(xml.URL, ssl.verifyPeer=FALSE)
 download.file(xml.URL, destfile='latestwasde.xml' <- tempfile(fileext=".xml"))
-temp <- xmlTreeParse(latestwasde)
+temp <- xmlTreeParse(latestwasde.xml)
 
 xmldataframe <- xmlToDataFrame(temp)
 print(xmldataframe)
