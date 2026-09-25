@@ -1,0 +1,17 @@
+week_ending,origin,destination,fob_usd_mt,fob_vintage,fob_source,freight_usd_mt,freight_vintage,freight_source,freight_method,landed_usd_mt,landed_usd_bu,flag
+2026-09-16,US_GULF,CN,252.0,2026-09-08,IGC via FAS Grain circular,74.5,2026-09-03,GTR Table 20 fixtures (Maritime Research),fixture_mean_4w,326.5,8.293537898801056,
+2026-09-16,US_GULF,JP,252.0,2026-09-08,IGC via FAS Grain circular,76.75,2026-09-16,GTR Table 1 dataset (AMS),GTR Table 1 weekly,328.75,8.35069091648039,
+2026-09-16,US_GULF,MX,252.0,2026-09-08,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,US_PNW,CN,236.0,2026-09-08,"IGC via FAS, Gulf less 16 $/mt (assumption)",35.0,2026-08-04,GTR Table 20 fixtures (Maritime Research),latest_fixture,271.0,6.883763462710831,assumption;stale;STALE
+2026-09-16,US_PNW,JP,236.0,2026-09-08,"IGC via FAS, Gulf less 16 $/mt (assumption)",37.75,2026-09-16,GTR Table 1 dataset (AMS),GTR Table 1 weekly,273.75,6.953617150985572,assumption
+2026-09-16,US_PNW,MX,236.0,2026-09-08,"IGC via FAS, Gulf less 16 $/mt (assumption)",,,GTR Table 20 fixtures (Maritime Research),none,,,assumption;n/a
+2026-09-16,BR,CN,238.0,2026-09-08,IGC via FAS Grain circular,51.15,2026-08-19,GTR Table 20 fixtures (Maritime Research),fixture_mean_4w,289.15,7.34479780532412,
+2026-09-16,BR,JP,238.0,2026-09-08,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,BR,MX,238.0,2026-09-08,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,AR,CN,219.0,2026-09-08,IGC via FAS Grain circular,51.15,2026-08-19,no public AR fixture; Brazil-China fixture mean as proxy,proxy:fixture_mean_4w,270.15,6.862172322698638,proxy
+2026-09-16,AR,JP,219.0,2026-09-08,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,AR,MX,219.0,2026-09-08,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,UP,CN,223.0,2026-08-07,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,UP,JP,223.0,2026-08-07,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,UP,MX,223.0,2026-08-07,IGC via FAS Grain circular,,,GTR Table 20 fixtures (Maritime Research),none,,,n/a
+2026-09-16,US_PNW_EST,CN,236.0,2026-09-08,"IGC via FAS, Gulf less 16 $/mt (assumption)",36.79,2026-09-16,estimated: GTR Table 1 PNW->Japan weekly ($37.75/mt) + China premium (-0.96 $/mt; see freight_pnw_proxy.md),proxy:premium_regression,272.79,6.929,assumption;estimated

@@ -1,0 +1,416 @@
+{
+  "generated": "2026-09-18",
+  "model": "v3 world: global residual US export demand (v2 US model intact)",
+  "n_draws": 10000,
+  "seeds": {
+    "us_errors": 20260918,
+    "us_elasticities": 710001,
+    "world": 810001
+  },
+  "p0": 4.8,
+  "anchors_mbu": {
+    "competitors": {
+      "BR": {
+        "beg": 582.8,
+        "prod": 5472.2,
+        "imp": 70.9,
+        "dom": 4015.5,
+        "end": 417.5,
+        "prod_sd": 385.0
+      },
+      "AR": {
+        "beg": 185.3,
+        "prod": 2165.2,
+        "imp": 0.2,
+        "dom": 696.8,
+        "end": 157.9,
+        "prod_sd": 260.0
+      },
+      "UP": {
+        "beg": 112.1,
+        "prod": 1251.9,
+        "imp": 0.4,
+        "dom": 283.4,
+        "end": 214.9,
+        "prod_sd": 80.0
+      }
+    },
+    "M_ROW0": 7799.1,
+    "M_CH0": 196.8,
+    "world_imports": 7995.9,
+    "world_exports": 8270.6
+  },
+  "timing_rule": "Mindy's rule 2026-09-18: no H1/H2 split; competitor production for US MY 2026/27 = harvests landing Sep 2026-Aug 2027 (BR/AR local MY 2027/28, UP local MY 2026/27). BR/AR anchors are local-2026/27 productions as no-change expectation proxies (2027/28 not published in Sep-2026 vintage); BR/AR baseline sds are forward uncertainties (385/260 M bu, detrended 2018-2026 volatility). Full table: competitor_my_mapping_2026-09-18.csv",
+  "x_other_mbu": 665.900000000001,
+  "x_other_note": "calibration constant so X_US(P0)=3275 at median params; ~666 M bu; the 666-vs-941 gap to implied other-exporter exports is the PSD world imports/exports statistical discrepancy (MY/TY)",
+  "china_lambda": 1.0,
+  "china_baseline_shares": {
+    "US": 0.2323156001607347,
+    "BR": 0.1533205535415377,
+    "AR": 0.29183561345191017,
+    "UP": 0.3225282328458174
+  },
+  "china_landed_costs": {
+    "US": 0.5280938833570412,
+    "BR": 0.9436598252387725,
+    "AR": 0.3,
+    "UP": 0.2
+  },
+  "china_calibration_note": "Logit centered on the weekly freight monitor (see freight_basis); target US share band [0.25,0.45] met=False. As of week ending 2026-09-16 the BR leg is LIVE on its 28-day fixture-mean (FREIGHT_MAX_VINTAGE_DAYS=35 per Mindy's 2026-09-18 decision that 4-week means count as live, apples-to-apples) and the US leg runs on the ESTIMATED PNW leg US_PNW_EST (Mindy's 2026-09-18 decision): live GTR Table 1 PNW->Japan $37.75/mt + estimated China premium -$0.96/mt = $36.79/mt (prediction SE $2.24/mt; see freight_pnw_proxy.md) \u2014 a modeled number, not a quote, flagged 'estimated' in the staged CSV and in freight_basis. AR/UP remain on static fallback (AR proxy fixture; UP no freight leg). With PNW as the US basis the US is competitive into China again (landed ~$6.93/bu vs $8.29 on the old Gulf basis), which matches the economics: the PNW is the shorter Asia route for corn (the Gulf is mainly a soybean-to-China artery). Level accounting only; does not affect price clearing.",
+  "freight_basis": {
+    "live": true,
+    "us_port": "PNW_EST",
+    "week_ending": "2026-09-16",
+    "fallback_legs": [
+      "AR",
+      "UP"
+    ],
+    "estimated_legs": [
+      "US"
+    ],
+    "note": "week ending 2026-09-16; US port=PNW_EST; FREIGHT_MAX_VINTAGE_DAYS=35 (Mindy's 2026-09-18 decision: fixture-mean legs are 4-week means by construction, so 35d keeps them live across weekly refreshes); live legs: BR; ESTIMATED legs (modeled, not quotes): US; static-fallback legs: AR, UP (AR proxy fixture; UP no freight leg)"
+  },
+  "elasticity_priors": {
+    "competitor_domestic": [
+      -0.3,
+      -0.2,
+      -0.1
+    ],
+    "row_import_demand": [
+      -0.6,
+      -0.4,
+      -0.2
+    ],
+    "china_import_demand": [
+      -0.9,
+      -0.6,
+      -0.3
+    ]
+  },
+  "scenarios": {
+    "base_global": {
+      "spec": {
+        "dProd": {},
+        "dM_CH": 0.0
+      },
+      "summary": {
+        "ending": {
+          "mean": 1568.2346070521678,
+          "sd": 103.50222022240841,
+          "p10": 1437.9282248810925,
+          "p50": 1566.876543154065,
+          "p90": 1697.1280595081082
+        },
+        "stocks_use": {
+          "mean": 0.09701097899241269,
+          "sd": 0.00696086881188029,
+          "p10": 0.08832656964593347,
+          "p50": 0.09684525410318123,
+          "p90": 0.10583380288335133
+        },
+        "price": {
+          "mean": 4.816584487300989,
+          "sd": 0.31822793788340065,
+          "p10": 4.421830975906956,
+          "p50": 4.80044735775561,
+          "p90": 5.229334374694201
+        },
+        "p_su_lt_10": 0.6836,
+        "n_out_of_bounds": 0,
+        "n": 10000,
+        "scenario": "base_global",
+        "dProd": {},
+        "dM_CH": 0.0,
+        "us_exports": {
+          "p10": 2780.2436717991704,
+          "p50": 3276.8862916416556,
+          "p90": 3766.881215922726
+        },
+        "china_level_shares": {
+          "US": 0.2330286851013134,
+          "BR": 0.15332704147107884,
+          "AR": 0.2914246716531594,
+          "UP": 0.3222196017744484
+        }
+      }
+    },
+    "brazil_bumper": {
+      "spec": {
+        "dProd": {
+          "BR": 500.0
+        },
+        "dM_CH": 0.0
+      },
+      "summary": {
+        "ending": {
+          "mean": 1645.8340470281028,
+          "sd": 107.9564071217903,
+          "p10": 1513.4617790290388,
+          "p50": 1642.2870825375308,
+          "p90": 1782.7239431728406
+        },
+        "stocks_use": {
+          "mean": 0.102305745241608,
+          "sd": 0.007354878924277068,
+          "p10": 0.0933246918618446,
+          "p50": 0.1019266797517785,
+          "p90": 0.11182526794080655
+        },
+        "price": {
+          "mean": 4.58730240141112,
+          "sd": 0.29769850280299276,
+          "p10": 4.217290414828494,
+          "p50": 4.574823858457981,
+          "p90": 4.970802902158733
+        },
+        "p_su_lt_10": 0.3875,
+        "n_out_of_bounds": 0,
+        "n": 10000,
+        "scenario": "brazil_bumper",
+        "dProd": {
+          "BR": 500.0
+        },
+        "dM_CH": 0.0,
+        "us_exports": {
+          "p10": 2480.38447060372,
+          "p50": 2985.680867261311,
+          "p90": 3475.576780922326
+        },
+        "china_level_shares": {
+          "US": 0.2330286851013134,
+          "BR": 0.15332704147107884,
+          "AR": 0.2914246716531594,
+          "UP": 0.3222196017744484
+        }
+      }
+    },
+    "brazil_drought": {
+      "spec": {
+        "dProd": {
+          "BR": -500.0
+        },
+        "dM_CH": 0.0
+      },
+      "summary": {
+        "ending": {
+          "mean": 1492.7371989169762,
+          "sd": 101.14794472887176,
+          "p10": 1362.5788762203263,
+          "p50": 1493.8771127243658,
+          "p90": 1618.5498639898371
+        },
+        "stocks_use": {
+          "mean": 0.09191013283080808,
+          "sd": 0.006720987692591198,
+          "p10": 0.08335650297358012,
+          "p50": 0.09195064250825172,
+          "p90": 0.10028992827643239
+        },
+        "price": {
+          "mean": 5.063143747390391,
+          "sd": 0.34214418478530545,
+          "p10": 4.641950444418462,
+          "p50": 5.043655585334006,
+          "p90": 5.51092683343721
+        },
+        "p_su_lt_10": 0.8917,
+        "n_out_of_bounds": 0,
+        "n": 10000,
+        "scenario": "brazil_drought",
+        "dProd": {
+          "BR": -500.0
+        },
+        "dM_CH": 0.0,
+        "us_exports": {
+          "p10": 3077.042164882945,
+          "p50": 3567.2299624607836,
+          "p90": 4059.3758739651626
+        },
+        "china_level_shares": {
+          "US": 0.2330286851013134,
+          "BR": 0.15332704147107884,
+          "AR": 0.2914246716531594,
+          "UP": 0.3222196017744484
+        }
+      }
+    },
+    "china_surge": {
+      "spec": {
+        "dProd": {},
+        "dM_CH": 200.0
+      },
+      "summary": {
+        "ending": {
+          "mean": 1538.130435460773,
+          "sd": 101.47312274984296,
+          "p10": 1409.7945313898392,
+          "p50": 1537.6713418521967,
+          "p90": 1664.0243694054743
+        },
+        "stocks_use": {
+          "mean": 0.09497074615899655,
+          "sd": 0.0067943049734687545,
+          "p10": 0.08644642800700086,
+          "p50": 0.09489336679589276,
+          "p90": 0.10350787133218572
+        },
+        "price": {
+          "mean": 4.911565485955082,
+          "sd": 0.3243724696388424,
+          "p10": 4.509754811336387,
+          "p50": 4.893515644795482,
+          "p90": 5.334956598807451
+        },
+        "p_su_lt_10": 0.7803,
+        "n_out_of_bounds": 0,
+        "n": 10000,
+        "scenario": "china_surge",
+        "dProd": {},
+        "dM_CH": 200.0,
+        "us_exports": {
+          "p10": 2902.3139144894467,
+          "p50": 3391.766573674333,
+          "p90": 3877.9404095030563
+        },
+        "china_level_shares": {
+          "US": 0.2330286851013134,
+          "BR": 0.15332704147107884,
+          "AR": 0.2914246716531594,
+          "UP": 0.3222196017744484
+        }
+      }
+    },
+    "h2_brazil_bumper": {
+      "spec": {
+        "dProd": {
+          "BR": 500.0
+        },
+        "dM_CH": 0.0
+      },
+      "summary": {
+        "ending": {
+          "mean": 1645.8340470281028,
+          "sd": 107.9564071217903,
+          "p10": 1513.4617790290388,
+          "p50": 1642.2870825375308,
+          "p90": 1782.7239431728406
+        },
+        "stocks_use": {
+          "mean": 0.102305745241608,
+          "sd": 0.007354878924277068,
+          "p10": 0.0933246918618446,
+          "p50": 0.1019266797517785,
+          "p90": 0.11182526794080655
+        },
+        "price": {
+          "mean": 4.58730240141112,
+          "sd": 0.29769850280299276,
+          "p10": 4.217290414828494,
+          "p50": 4.574823858457981,
+          "p90": 4.970802902158733
+        },
+        "p_su_lt_10": 0.3875,
+        "n_out_of_bounds": 0,
+        "n": 10000,
+        "scenario": "h2_brazil_bumper",
+        "dProd": {
+          "BR": 500.0
+        },
+        "dM_CH": 0.0,
+        "us_exports": {
+          "p10": 2480.38447060372,
+          "p50": 2985.680867261311,
+          "p90": 3475.576780922326
+        },
+        "china_level_shares": {
+          "US": 0.2330286851013134,
+          "BR": 0.15332704147107884,
+          "AR": 0.2914246716531594,
+          "UP": 0.3222196017744484
+        }
+      }
+    },
+    "h2_brazil_drought": {
+      "spec": {
+        "dProd": {
+          "BR": -500.0
+        },
+        "dM_CH": 0.0
+      },
+      "summary": {
+        "ending": {
+          "mean": 1492.7371989169762,
+          "sd": 101.14794472887176,
+          "p10": 1362.5788762203263,
+          "p50": 1493.8771127243658,
+          "p90": 1618.5498639898371
+        },
+        "stocks_use": {
+          "mean": 0.09191013283080808,
+          "sd": 0.006720987692591198,
+          "p10": 0.08335650297358012,
+          "p50": 0.09195064250825172,
+          "p90": 0.10028992827643239
+        },
+        "price": {
+          "mean": 5.063143747390391,
+          "sd": 0.34214418478530545,
+          "p10": 4.641950444418462,
+          "p50": 5.043655585334006,
+          "p90": 5.51092683343721
+        },
+        "p_su_lt_10": 0.8917,
+        "n_out_of_bounds": 0,
+        "n": 10000,
+        "scenario": "h2_brazil_drought",
+        "dProd": {
+          "BR": -500.0
+        },
+        "dM_CH": 0.0,
+        "us_exports": {
+          "p10": 3077.042164882945,
+          "p50": 3567.2299624607836,
+          "p90": 4059.3758739651626
+        },
+        "china_level_shares": {
+          "US": 0.2330286851013134,
+          "BR": 0.15332704147107884,
+          "AR": 0.2914246716531594,
+          "UP": 0.3222196017744484
+        }
+      }
+    }
+  },
+  "china_surge_capture": {
+    "US": 0.5788292722099345,
+    "BR": 0.07819060228094372,
+    "AR": 0.013579440858350153,
+    "UP": 0.005529544074208275
+  },
+  "v2_comparison": {
+    "v2_base": {
+      "price_p50": 4.4675748893968805,
+      "exports_p50": 2837.862823196586,
+      "p_su_lt_10": 0.267
+    },
+    "global_base": {
+      "price_p50": 4.80044735775561,
+      "exports_p50": 3276.8862916416556,
+      "p_su_lt_10": 0.6836
+    },
+    "delta_global_minus_v2": {
+      "price_p50": 0.33287246835872963,
+      "exports_p50": 439.02346844506974,
+      "p_su_lt_10_pp": 41.66
+    }
+  },
+  "validation": {
+    "solver": "100% converged all scenarios (120 bisection iters/draw)",
+    "us_identity": "max |S1-(use+ending)| < 1e-3 M bu all draws",
+    "world_identity": "max < 1e-3 M bu all draws",
+    "exports_le_imports": "asserted per draw",
+    "scenario_ordering": "bumper<base price & exports; drought>base price; surge>base price",
+    "xs_increasing": true,
+    "calibration_X_US_at_P0": 3275.0
+  }
+}
